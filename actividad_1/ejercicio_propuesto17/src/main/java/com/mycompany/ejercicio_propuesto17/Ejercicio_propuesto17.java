@@ -18,14 +18,20 @@ public class Ejercicio_propuesto17 {
         double perimetro; // variable para almacenar el perimetro del circulo
         double area; // variable para almacenar el area del circulo
         String entrada_string; // variable para almacenar el radio en forma de string
-        System.out.print("Ingrese un numero: "); // mensaje para el usuario
+        System.out.print("Ingrese el radio del circulo: "); // mensaje para el usuario
         Scanner entrada = new Scanner(System.in); // objeto de la clase Scanner para leer por teclado
         entrada_string = entrada.next(); // lectura del numero ingresado por teclado
         entrada_string = calculos.comas_porPuntos(entrada_string); // se cambian las comas por puntos en el string para poder usar double
 
         radio = Double.parseDouble(entrada_string); // se convierte la entrada a double para poder operar con ella       
 
-        /* se llaman los metodos para calcular cuadrados y cubos */
+        /* se llaman los metodos para calcular perimetro y area */
+
+        if (radio < 0) {
+            System.out.println("El radio no puede ser negativo");
+            entrada.close(); // cerrar el objeto entrada
+            return; // salir del programa si el numero es negativo
+        }else{
         perimetro = calculos.perimetro_circulo(radio); // se calcula el perimetro del circulo
         area = calculos.area_circulo(radio);         // se calcula el area del circulo
 
@@ -34,5 +40,6 @@ public class Ejercicio_propuesto17 {
         System.out.println("El area es " + area);
 
         entrada.close(); // cerrar el objeto entrada
+        }
     }
 }
