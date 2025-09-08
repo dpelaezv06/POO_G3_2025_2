@@ -9,5 +9,19 @@ package com.mycompany.ejercicio_propuesto14;
  * @author daniel
  */
 public class calculos {
-    
+    /* clase que contiene los metodos para obtener cuadrados y cubos de un numero */
+    static double cuadrado(double numero){
+        /* metodo que devuelve el cuadrado de un numero */
+        double cuadrado;
+        cuadrado = Math.pow(numero, 2);
+        return cuadrado;
+    }
+
+    static double cubo(double numero){
+        /* metodo que devuelve el cubo de un numero */
+        double cubo;
+        cubo = Math.pow(numero, 3);
+        return cubo;
+    }    
 }
+    
