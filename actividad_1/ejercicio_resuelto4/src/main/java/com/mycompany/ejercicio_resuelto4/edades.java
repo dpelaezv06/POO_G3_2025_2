@@ -10,7 +10,7 @@ package com.mycompany.ejercicio_resuelto4;
  */
 
 public class edades {
-    /* Método para calcular la edad de Juan, Alberto, Ana y la madre */
+    /* clase para calcular la edad de Juan, Alberto, Ana y la madre */
 
     static double edad_alberto(double edad_juan){
         double edad_alberto; // Variable para almacenar la edad de Alberto
