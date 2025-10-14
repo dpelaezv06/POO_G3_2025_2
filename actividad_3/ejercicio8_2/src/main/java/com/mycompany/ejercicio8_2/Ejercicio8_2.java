@@ -11,6 +11,8 @@ package com.mycompany.ejercicio8_2;
 public class Ejercicio8_2 {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        VentanaPrincipal formulario = new VentanaPrincipal();
+        formulario.setResizable(false);
+        formulario.setVisible(true);
     }
 }
