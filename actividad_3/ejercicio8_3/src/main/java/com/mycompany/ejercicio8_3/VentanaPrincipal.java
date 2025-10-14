@@ -28,17 +28,41 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        boton_esfera = new javax.swing.JButton();
+        boton_cilindro = new javax.swing.JButton();
+        boton_piramide = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Figuras");
+
+        boton_esfera.setText("Esfera");
+
+        boton_cilindro.setText("Cilindro");
+
+        boton_piramide.setText("Pirámide");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(28, 28, 28)
+                .addComponent(boton_cilindro)
+                .addGap(18, 18, 18)
+                .addComponent(boton_esfera)
+                .addGap(18, 18, 18)
+                .addComponent(boton_piramide)
+                .addContainerGap(34, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(56, 56, 56)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(boton_cilindro)
+                    .addComponent(boton_esfera)
+                    .addComponent(boton_piramide))
+                .addContainerGap(23, Short.MAX_VALUE))
         );
 
         pack();
@@ -70,5 +94,8 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton boton_cilindro;
+    private javax.swing.JButton boton_esfera;
+    private javax.swing.JButton boton_piramide;
     // End of variables declaration//GEN-END:variables
 }
