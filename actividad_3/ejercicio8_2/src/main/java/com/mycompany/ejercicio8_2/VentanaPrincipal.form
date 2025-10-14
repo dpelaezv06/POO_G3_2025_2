@@ -26,31 +26,6 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="label_nota5" min="-2" max="-2" attributes="0"/>
-                          <Component id="label_nota2" min="-2" max="-2" attributes="0"/>
-                          <Component id="label_nota1" min="-2" max="-2" attributes="0"/>
-                          <Component id="label_nota3" alignment="1" min="-2" max="-2" attributes="0"/>
-                          <Component id="label_nota4" alignment="1" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="campo_nota1" min="-2" max="-2" attributes="0"/>
-                          <Component id="campo_nota2" min="-2" max="-2" attributes="0"/>
-                          <Component id="campo_nota4" min="-2" max="-2" attributes="0"/>
-                          <Component id="campo_nota3" min="-2" max="-2" attributes="0"/>
-                          <Component id="campo_nota5" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace max="32767" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="1" attributes="0">
-                      <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                      <Component id="boton_calcular" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
-                      <Component id="boton_limpiar" min="-2" max="-2" attributes="0"/>
-                      <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
-                  </Group>
                   <Group type="102" attributes="0">
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Component id="label_minima" min="-2" max="-2" attributes="0"/>
@@ -59,6 +34,34 @@
                           <Component id="label_promedio" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Group type="102" alignment="1" attributes="0">
+                      <Group type="103" groupAlignment="1" attributes="0">
+                          <Group type="102" alignment="1" attributes="0">
+                              <Group type="103" groupAlignment="1" attributes="0">
+                                  <Component id="label_nota5" min="-2" max="-2" attributes="0"/>
+                                  <Component id="label_nota2" min="-2" max="-2" attributes="0"/>
+                                  <Component id="label_nota1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="label_nota3" alignment="1" min="-2" max="-2" attributes="0"/>
+                                  <Component id="label_nota4" alignment="1" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace min="-2" pref="35" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="campo_nota1" max="32767" attributes="0"/>
+                                  <Component id="campo_nota2" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="campo_nota3" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="campo_nota4" max="32767" attributes="0"/>
+                                  <Component id="campo_nota5" alignment="0" max="32767" attributes="0"/>
+                              </Group>
+                          </Group>
+                          <Group type="102" alignment="1" attributes="0">
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                              <Component id="boton_calcular" min="-2" max="-2" attributes="0"/>
+                              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+                              <Component id="boton_limpiar" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <EmptySpace min="-2" pref="81" max="-2" attributes="0"/>
                   </Group>
               </Group>
           </Group>
@@ -105,7 +108,7 @@
               <Component id="label_maxima" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="label_minima" min="-2" max="-2" attributes="0"/>
-              <EmptySpace pref="53" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
