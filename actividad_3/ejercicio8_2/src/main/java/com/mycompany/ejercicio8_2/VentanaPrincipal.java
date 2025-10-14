@@ -46,6 +46,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         label_minima = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Notas");
 
         label_nota1.setText("Nota 1:");
 
