@@ -58,6 +58,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         label_nota5.setText("Nota 5:");
 
         boton_calcular.setText("Calcular");
+        boton_calcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_calcularActionPerformed(evt);
+            }
+        });
 
         boton_limpiar.setText("Limpiar");
 
@@ -146,6 +151,26 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void boton_calcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_calcularActionPerformed
+        // TODO add your handling code here:
+        
+        Notas notas = new Notas(); // crea un objeto de la clase Notas
+        notas.lista_notas[0] = Double.parseDouble(campo_nota1.getText()); // obtiene la nota 1 del campo de texto y la convierte a double
+        notas.lista_notas[1] = Double.parseDouble(campo_nota2.getText()); // obtiene la nota 2 del campo de texto y la convierte a double
+        notas.lista_notas[2] = Double.parseDouble(campo_nota3.getText()); // obtiene la nota 3 del campo de texto y la convierte a double
+        notas.lista_notas[3] = Double.parseDouble(campo_nota4.getText()); // obtiene la nota 4 del campo de texto y la convierte a double
+        notas.lista_notas[4] = Double.parseDouble(campo_nota5.getText()); // obtiene la nota 5 del campo de texto y la convierte a double
+        notas.calcular_promedio(); // calcula el promedio de las notas
+        notas.calcular_desviacion(); // calcula la desviacion estandar de las notas
+        notas.encontrar_mayor(); // encuentra la nota mayor
+        notas.encontrar_menor(); // encuentra la nota menor
+        label_promedio.setText("Promedio: " + String.valueOf(String.format("%.2f", notas.calcular_promedio()))); // muestra el promedio en el label
+        label_desviacion.setText("Desviación estándar: " + String.valueOf(String.format("%.2f", notas.calcular_desviacion()))); // muestra la desviacion estandar en el label
+        label_maxima.setText("Nota máxima: " + String.valueOf(String.format("%.2f", notas.encontrar_mayor()))); // muestra la nota mayor en el label    
+        label_minima.setText("Nota mínima: " + String.valueOf(String.format("%.2f", notas.encontrar_menor()))); // muestra la nota menor en el label
+
+    }//GEN-LAST:event_boton_calcularActionPerformed
 
     /**
      * @param args the command line arguments
