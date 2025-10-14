@@ -65,6 +65,11 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         });
 
         boton_limpiar.setText("Limpiar");
+        boton_limpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_limpiarActionPerformed(evt);
+            }
+        });
 
         label_promedio.setText("Promedio: ");
 
@@ -171,6 +176,20 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         label_minima.setText("Nota mínima: " + String.valueOf(String.format("%.2f", notas.encontrar_menor()))); // muestra la nota menor en el label
 
     }//GEN-LAST:event_boton_calcularActionPerformed
+
+    private void boton_limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_limpiarActionPerformed
+        // TODO add your handling code here:
+        campo_nota1.setText(""); // limpia el campo de texto de la nota 1
+        campo_nota2.setText(""); // limpia el campo de texto de la nota 2
+        campo_nota3.setText(""); // limpia el campo de texto de la nota 3
+        campo_nota4.setText(""); // limpia el campo de texto de la nota 4
+        campo_nota5.setText(""); // limpia el campo de texto de la nota 5
+        label_promedio.setText("Promedio: "); // limpia el label del promedio
+        label_desviacion.setText("Desviación estándar: "); // limpia el label de la desviacion estandar
+        label_maxima.setText("Nota máxima: "); // limpia el label de la nota mayor
+        label_minima.setText("Nota mínima: "); // limpia el label de la nota menor        
+        
+    }//GEN-LAST:event_boton_limpiarActionPerformed
 
     /**
      * @param args the command line arguments
