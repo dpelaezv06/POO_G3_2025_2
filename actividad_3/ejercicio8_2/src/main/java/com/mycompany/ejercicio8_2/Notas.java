@@ -19,11 +19,23 @@ public class Notas {
         /* metodo para calcular el promedio de las notas */
         double suma = 0; // variable para almacenar la suma de las notas
         double promedio; // variable para almacenar el promedio
-        for (int contador = 1; contador < lista_notas.length; contador++) {
+        for (int contador = 1; contador < lista_notas.length; contador++) { // recorre el array de notas
             suma += lista_notas[contador]; // suma cada nota al total
         }
         promedio = suma / (lista_notas.length); // calcula el promedio
         return promedio; // retorna el promedio
+    }
+
+    double calcular_desviacion(){
+        /* metodo para calcular la desviacion estandar de las notas */
+        double promedio = calcular_promedio(); // obtiene el promedio de las notas
+        double suma = 0; // variable para almacenar la suma de las diferencias al cuadrado
+        double desviacion; // variable para almacenar la desviacion estandar
+        for (int contador = 1; contador < lista_notas.length; contador++) { // recorre el array de notas
+            suma += Math.pow((lista_notas[contador] - promedio), 2); // suma la diferencia al cuadrado
+        }
+        desviacion = Math.sqrt(suma / (lista_notas.length)); // calcula la desviacion estandar
+        return desviacion; // retorna la desviacion estandar
     }
     
 }
