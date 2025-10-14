@@ -37,5 +37,27 @@ public class Notas {
         desviacion = Math.sqrt(suma / (lista_notas.length)); // calcula la desviacion estandar
         return desviacion; // retorna la desviacion estandar
     }
+
+    double encontrar_mayor(){
+        /* metodo para encontrar la nota mayor */
+        double mayor = lista_notas[0]; // crea una variable para encontrar la nota mayor y la inicializa con la primera nota
+        for (int contador = 1; contador < lista_notas.length; contador++) { // recorre el array de notas
+            if (lista_notas[contador] > mayor) { // si la nota actual es mayor que la variable mayor
+                mayor = lista_notas[contador]; // actualiza la variable mayor
+            }
+        }
+        return mayor; // retorna la nota mayor
+    }
+
+    double encontrar_menor(){
+        /* metodo para encontrar la nota menor */
+        double menor = lista_notas[0]; // crea una variable para encontrar la nota menor y la inicializa con la primera nota
+        for (int contador = 1; contador < lista_notas.length; contador++) { // recorre el array de notas
+            if (lista_notas[contador] < menor) { // si la nota actual es menor que la variable menor
+                menor = lista_notas[contador]; // actualiza la variable menor
+            }
+        }
+        return menor; // retorna la nota menor
+    }
     
 }
