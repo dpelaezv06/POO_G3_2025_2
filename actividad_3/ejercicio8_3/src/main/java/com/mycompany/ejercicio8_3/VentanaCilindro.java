@@ -28,21 +28,88 @@ public class VentanaCilindro extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        label_radio = new javax.swing.JLabel();
+        label_altura = new javax.swing.JLabel();
+        boton_calcular = new javax.swing.JButton();
+        campo_radio = new javax.swing.JTextField();
+        campo_altura = new javax.swing.JTextField();
+        label_volumen = new javax.swing.JLabel();
+        label_superficie = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Cilindro");
+
+        label_radio.setText("Radio (cm):");
+
+        label_altura.setText("Altura (cm):");
+
+        boton_calcular.setText("Calcular");
+        boton_calcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_calcularActionPerformed(evt);
+            }
+        });
+
+        campo_altura.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                campo_alturaActionPerformed(evt);
+            }
+        });
+
+        label_volumen.setText("Volumen (cm3):");
+
+        label_superficie.setText("Superficie (cm2):");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label_superficie)
+                    .addComponent(label_volumen)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(label_altura)
+                            .addComponent(label_radio))
+                        .addGap(61, 61, 61)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(boton_calcular, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(campo_altura)
+                            .addComponent(campo_radio))))
+                .addContainerGap(10, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(38, 38, 38)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(label_radio)
+                    .addComponent(campo_radio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(label_altura)
+                    .addComponent(campo_altura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(boton_calcular)
+                .addGap(18, 18, 18)
+                .addComponent(label_volumen)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(label_superficie)
+                .addContainerGap(22, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void campo_alturaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_campo_alturaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_campo_alturaActionPerformed
+
+    private void boton_calcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_calcularActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_boton_calcularActionPerformed
 
     /**
      * @param args the command line arguments
@@ -70,5 +137,12 @@ public class VentanaCilindro extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton boton_calcular;
+    private javax.swing.JTextField campo_altura;
+    private javax.swing.JTextField campo_radio;
+    private javax.swing.JLabel label_altura;
+    private javax.swing.JLabel label_radio;
+    private javax.swing.JLabel label_superficie;
+    private javax.swing.JLabel label_volumen;
     // End of variables declaration//GEN-END:variables
 }
