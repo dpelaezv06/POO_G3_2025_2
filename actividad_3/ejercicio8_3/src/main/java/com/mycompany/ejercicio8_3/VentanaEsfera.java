@@ -28,17 +28,54 @@ public class VentanaEsfera extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        label_radio = new javax.swing.JLabel();
+        campo_radio = new javax.swing.JTextField();
+        boton_calcular = new javax.swing.JButton();
+        label_volumen = new javax.swing.JLabel();
+        label_superficie = new javax.swing.JLabel();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Esfera");
+
+        label_radio.setText("Radio (cm):");
+
+        boton_calcular.setText("Calcular");
+
+        label_volumen.setText("Volumen (cm3):");
+
+        label_superficie.setText("Superficie (cm2):");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label_superficie)
+                    .addComponent(label_volumen)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(label_radio)
+                        .addGap(33, 33, 33)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                            .addComponent(boton_calcular, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(campo_radio))))
+                .addContainerGap(21, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(33, 33, 33)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(label_radio)
+                    .addComponent(campo_radio, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(boton_calcular)
+                .addGap(18, 18, 18)
+                .addComponent(label_volumen)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(label_superficie)
+                .addContainerGap(21, Short.MAX_VALUE))
         );
 
         pack();
@@ -70,5 +107,10 @@ public class VentanaEsfera extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton boton_calcular;
+    private javax.swing.JTextField campo_radio;
+    private javax.swing.JLabel label_radio;
+    private javax.swing.JLabel label_superficie;
+    private javax.swing.JLabel label_volumen;
     // End of variables declaration//GEN-END:variables
 }
