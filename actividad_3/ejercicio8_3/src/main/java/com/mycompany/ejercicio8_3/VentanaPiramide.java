@@ -4,6 +4,8 @@
  */
 package com.mycompany.ejercicio8_3;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author daniel
@@ -48,6 +50,11 @@ public class VentanaPiramide extends javax.swing.JFrame {
         jLabel2.setText("Apotema (cm):");
 
         boton_calcular.setText("Calcular");
+        boton_calcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_calcularActionPerformed(evt);
+            }
+        });
 
         label_volumen.setText("Volumen (cm3):");
 
@@ -102,6 +109,31 @@ public class VentanaPiramide extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void boton_calcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_calcularActionPerformed
+        // TODO add your handling code here:
+        Piramide piramide;
+        boolean error = false;
+        double base = 0;
+        double altura = 0;
+        double apotema = 0;
+        try {
+            base = Double.parseDouble(campo_base.getText());
+            altura = Double.parseDouble(campo_altura.getText());
+            apotema = Double.parseDouble(campo_apotema.getText());
+            piramide = new Piramide(base, altura, apotema);
+            label_volumen.setText(String.format("Volumen (cm3): %.2f", piramide.calcular_volumen()));
+            label_superficie.setText(String.format("Superficie (cm2): %.2f", piramide.calcular_superficie()));
+        } catch (Exception e) {
+            error = true;
+        } finally{
+            if (error) {
+                JOptionPane.showMessageDialog(null,"Campo nulo o error en formato de número", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }     
+        
+        
+    }//GEN-LAST:event_boton_calcularActionPerformed
 
     /**
      * @param args the command line arguments
