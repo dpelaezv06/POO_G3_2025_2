@@ -11,6 +11,9 @@ package com.mycompany.ejercicio8_3;
 public class Ejercicio8_3 {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        VentanaPrincipal ventana_principal;
+        ventana_principal = new VentanaPrincipal();
+        ventana_principal.setVisible(true);
+        ventana_principal.setResizable(false);
     }
 }

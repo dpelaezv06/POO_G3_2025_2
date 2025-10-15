@@ -36,10 +36,25 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         setTitle("Figuras");
 
         boton_esfera.setText("Esfera");
+        boton_esfera.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_esferaActionPerformed(evt);
+            }
+        });
 
         boton_cilindro.setText("Cilindro");
+        boton_cilindro.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_cilindroActionPerformed(evt);
+            }
+        });
 
         boton_piramide.setText("Pirámide");
+        boton_piramide.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_piramideActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -67,6 +82,30 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void boton_cilindroActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_cilindroActionPerformed
+        // TODO add your handling code here:
+        VentanaCilindro cilindro = new VentanaCilindro();
+        cilindro.setVisible(true);
+        cilindro.setResizable(false);
+
+    }//GEN-LAST:event_boton_cilindroActionPerformed
+
+    private void boton_esferaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_esferaActionPerformed
+        // TODO add your handling code here:
+        VentanaEsfera esfera = new VentanaEsfera();
+        esfera.setVisible(true);
+        esfera.setResizable(false);
+
+    }//GEN-LAST:event_boton_esferaActionPerformed
+
+    private void boton_piramideActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_piramideActionPerformed
+        // TODO add your handling code here:
+        VentanaPiramide piramide = new VentanaPiramide();
+        piramide.setVisible(true);
+        piramide.setResizable(false);
+        
+    }//GEN-LAST:event_boton_piramideActionPerformed
 
     /**
      * @param args the command line arguments

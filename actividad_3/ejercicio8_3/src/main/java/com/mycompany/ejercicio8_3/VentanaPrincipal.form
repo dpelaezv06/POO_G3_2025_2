@@ -54,16 +54,25 @@
       <Properties>
         <Property name="text" type="java.lang.String" value="Esfera"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boton_esferaActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="boton_cilindro">
       <Properties>
         <Property name="text" type="java.lang.String" value="Cilindro"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boton_cilindroActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JButton" name="boton_piramide">
       <Properties>
         <Property name="text" type="java.lang.String" value="Pir&#xe1;mide"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="boton_piramideActionPerformed"/>
+      </Events>
     </Component>
   </SubComponents>
 </Form>
