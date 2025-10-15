@@ -4,6 +4,8 @@
  */
 package com.mycompany.ejercicio8_3;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author daniel
@@ -109,6 +111,22 @@ public class VentanaCilindro extends javax.swing.JFrame {
 
     private void boton_calcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_calcularActionPerformed
         // TODO add your handling code here:
+        boolean error = false; // se pone una variable para controlar la aparicion de errores
+        double radio = 0;
+        double altura = 0;
+        try {
+            radio = Double.parseDouble(campo_radio.getText()); // se intenta convertir el texto del campo en un double
+            altura = Double.parseDouble(campo_altura.getText()); // se intenta convertir el texto del campo en un double
+            Cilindro cilindro = new Cilindro(radio, altura); // se crea un objeto cilindro
+            label_volumen.setText(String.format("Volumen (cm3): %.2f", cilindro.calcular_volumen())); // se muestra el volumen con 2 decimales
+            label_superficie.setText(String.format("Superficie (cm2): %.2f", cilindro.calcular_superficie())); // se muestra la superficie con 2 decimales
+        } catch (Exception e) {
+            error = true; // si hay un error al convertir el texto en double, se pone la variable error a true
+        }finally{
+            if (error) { //si ha habido un error
+                JOptionPane.showMessageDialog(null, "Campo nulo o error en formato de numero", "Error", JOptionPane.ERROR_MESSAGE);}
+        }
+
     }//GEN-LAST:event_boton_calcularActionPerformed
 
     /**
