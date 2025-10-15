@@ -4,6 +4,8 @@
  */
 package com.mycompany.ejercicio8_3;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author daniel
@@ -40,6 +42,11 @@ public class VentanaEsfera extends javax.swing.JFrame {
         label_radio.setText("Radio (cm):");
 
         boton_calcular.setText("Calcular");
+        boton_calcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_calcularActionPerformed(evt);
+            }
+        });
 
         label_volumen.setText("Volumen (cm3):");
 
@@ -80,6 +87,24 @@ public class VentanaEsfera extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void boton_calcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_calcularActionPerformed
+        // TODO add your handling code here:
+        boolean error = false; // variable para controlar si hay error en la entrada
+        try {
+            double radio = Double.parseDouble(campo_radio.getText());
+            Esfera esfera = new Esfera(radio); // cracion del objeto esfera
+            label_volumen.setText(String.format("Volumen (cm3): %.2f", esfera.calcular_volumen()));
+            label_superficie.setText(String.format("Superficie (cm2): %.2f", esfera.calcular_superficie()));
+        } catch (Exception e) {
+            error = true;
+        } finally{
+            if (error) {
+                JOptionPane.showMessageDialog(null,"Campo nulo o error en formato de número", "Error", JOptionPane.ERROR_MESSAGE);
+            }
+        }       
+        
+    }//GEN-LAST:event_boton_calcularActionPerformed
 
     /**
      * @param args the command line arguments
