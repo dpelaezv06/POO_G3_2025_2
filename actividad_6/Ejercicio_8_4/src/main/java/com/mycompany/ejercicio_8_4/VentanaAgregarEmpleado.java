@@ -9,6 +9,18 @@ package com.mycompany.ejercicio_8_4;
  * @author daniel
  */
 public class VentanaAgregarEmpleado extends javax.swing.JFrame {
+
+    void limpiar_campos() {
+        campo_nombre.setText("");
+        campo_apellidos.setText("");
+        cargo.setSelectedIndex(0);
+        grupo_genero.clearSelection();
+        campo_salarioDiario.setText("");
+        spinner_diasLaborados.setValue(0);
+        campo_otrosIngresos.setText("");
+        campo_salud.setText("");
+        campo_pensiones.setText("");
+    }
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VentanaAgregarEmpleado.class.getName());
 
@@ -84,6 +96,11 @@ public class VentanaAgregarEmpleado extends javax.swing.JFrame {
         boton_agregar.setText("Agregar");
 
         boton_limpiar.setText("Limpiar");
+        boton_limpiar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_limpiarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -173,6 +190,13 @@ public class VentanaAgregarEmpleado extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void boton_limpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_limpiarActionPerformed
+        // TODO add your handling code here:
+        limpiar_campos();  
+        
+        
+    }//GEN-LAST:event_boton_limpiarActionPerformed
 
     /**
      * @param args the command line arguments
