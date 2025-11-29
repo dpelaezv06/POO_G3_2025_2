@@ -48,7 +48,7 @@ public class VentanaAgregarEmpleado extends javax.swing.JFrame {
         campo_pensiones = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         boton_agregar = new javax.swing.JButton();
-        boton_borrar = new javax.swing.JButton();
+        boton_limpiar = new javax.swing.JButton();
         spinner_diasLaborados = new javax.swing.JSpinner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -83,7 +83,7 @@ public class VentanaAgregarEmpleado extends javax.swing.JFrame {
 
         boton_agregar.setText("Agregar");
 
-        boton_borrar.setText("Borrar");
+        boton_limpiar.setText("Limpiar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -120,7 +120,7 @@ public class VentanaAgregarEmpleado extends javax.swing.JFrame {
                 .addGap(89, 89, 89)
                 .addComponent(boton_agregar)
                 .addGap(18, 18, 18)
-                .addComponent(boton_borrar)
+                .addComponent(boton_limpiar)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -167,7 +167,7 @@ public class VentanaAgregarEmpleado extends javax.swing.JFrame {
                 .addGap(18, 18, 18)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(boton_agregar)
-                    .addComponent(boton_borrar))
+                    .addComponent(boton_limpiar))
                 .addContainerGap(17, Short.MAX_VALUE))
         );
 
@@ -201,8 +201,8 @@ public class VentanaAgregarEmpleado extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton boton_agregar;
-    private javax.swing.JButton boton_borrar;
     private javax.swing.JRadioButton boton_femenino;
+    private javax.swing.JButton boton_limpiar;
     private javax.swing.JRadioButton boton_masculino;
     private javax.swing.JTextField campo_apellidos;
     private javax.swing.JTextField campo_nombre;
