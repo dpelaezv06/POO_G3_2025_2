@@ -74,6 +74,11 @@ public class VentanaAgregarEmpleado extends javax.swing.JFrame {
         jLabel3.setText("Cargo:");
 
         cargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cargo.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cargoActionPerformed(evt);
+            }
+        });
 
         jLabel4.setText("Género:");
 
@@ -197,6 +202,10 @@ public class VentanaAgregarEmpleado extends javax.swing.JFrame {
         
         
     }//GEN-LAST:event_boton_limpiarActionPerformed
+
+    private void cargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cargoActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cargoActionPerformed
 
     /**
      * @param args the command line arguments
