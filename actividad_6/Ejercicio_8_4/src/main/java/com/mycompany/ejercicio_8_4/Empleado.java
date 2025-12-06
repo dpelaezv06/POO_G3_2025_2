@@ -22,6 +22,7 @@ public class Empleado {
     private TipoGenero genero;
 
     public Empleado(String nombre, String apellidos, TipoCargo cargo, TipoGenero genero, double salario_diario, int dias_trabajados, double otros_ingresos, double pagos_salud, double aporte_pensiones) {
+        /* el constructor de la clase pone todos los atributos en el objeto */
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.cargo = cargo;
@@ -33,6 +34,16 @@ public class Empleado {
         this.genero = genero;
 
     }
+
+    public double calcularNomina(){
+        /* metodo para calcular el pago de nomina de recibeb un empleado */
+        double ingresos_brutos = (salario_diario * dias_trabajados) + otros_ingresos; // los ingresos brutos totales
+        double deducciones = pagos_salud + aporte_pensiones; // las deducciones al salario
+        double nomina_neta = ingresos_brutos - deducciones; // la nomina neta es la diferencia entre los ingresos y las deducciones
+        return nomina_neta;
+    }
+
+    /* metodos get para obtener los atributos */
 
     public String getNombre(){
         return nombre;
@@ -69,15 +80,6 @@ public class Empleado {
     public double getAportePensiones(){
         return aporte_pensiones;
     }
-
-    public double calcularNomina(){
-        double ingresos_brutos = (salario_diario * dias_trabajados) + otros_ingresos;
-        double deducciones = pagos_salud + aporte_pensiones;
-        double nomina_neta = ingresos_brutos - deducciones;
-        return nomina_neta;
-    }
-
-
 
 
 }

@@ -8,6 +8,9 @@ package com.mycompany.ejercicio_8_4;
  *
  * @author daniel
  */
+
+import java.util.Vector;
+
 public class ListaEmpleados {
     
 }
