@@ -9,7 +9,5 @@ package com.mycompany.ejercicio_8_4;
  * @author daniel
  */
 public enum TipoCargo {
-    DIRECTIVO, ESTRATEGICO, OPERATIVO    
-    
-    
+    DIRECTIVO, ESTRATEGICO, OPERATIVO
 }
