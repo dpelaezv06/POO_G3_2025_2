@@ -4,11 +4,16 @@
  */
 package com.mycompany.ejercicio_8_4;
 
+import java.io.*;
+import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author daniel
  */
 public class VentanaPrincipal extends javax.swing.JFrame {
+    ListaEmpleados empleados = new ListaEmpleados();
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VentanaPrincipal.class.getName());
 
@@ -17,6 +22,9 @@ public class VentanaPrincipal extends javax.swing.JFrame {
      */
     public VentanaPrincipal() {
         initComponents();
+        
+        
+        
     }
 
     /**
@@ -49,9 +57,19 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenu1.add(jMenuItem1);
 
         jMenuItem2.setText("Calcular nómina");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem2);
 
         jMenuItem3.setText("Guardar archivo");
+        jMenuItem3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem3ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem3);
 
         jMenuBar1.add(jMenu1);
@@ -75,8 +93,46 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
         VentanaAgregarEmpleado ventana_agregarEmpleado = new VentanaAgregarEmpleado();
+        ventana_agregarEmpleado.setVisible(true);
         
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        VentanaNomina ventanaNomina = new VentanaNomina();
+        ventanaNomina.setVisible(true);
+        
+        
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
+
+    private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
+        // TODO add your handling code here:
+        JFileChooser file_chooser = new JFileChooser();
+        file_chooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+        int respuesta = file_chooser.showOpenDialog(this);
+        
+        if (respuesta == JFileChooser.APPROVE_OPTION){
+            File directorio_elegido = file_chooser.getSelectedFile();
+            String nombre = directorio_elegido.getName();            
+            try {
+                String contenido_archivo = empleados.convertirTexto();                
+                File archivo = new File(nombre + "\\" + "Nómina.txt");
+                archivo.createNewFile();
+                FileWriter file_writer = new FileWriter(archivo);
+                BufferedWriter buffered_writer = new BufferedWriter(file_writer);
+                buffered_writer.write(contenido_archivo);
+                buffered_writer.close();
+                String texto_mensaje = "El archivo de la nómina Nomina.txt se ha creado en " + nombre;
+                JOptionPane.showMessageDialog(this, texto_mensaje, "Mensaje", JOptionPane.INFORMATION_MESSAGE, null);
+                
+            }catch (Exception e){
+                e.printStackTrace();
+            }
+        }
+        
+
+        
+    }//GEN-LAST:event_jMenuItem3ActionPerformed
 
     /**
      * @param args the command line arguments

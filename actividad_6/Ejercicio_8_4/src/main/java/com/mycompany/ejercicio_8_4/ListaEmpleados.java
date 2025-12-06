@@ -46,5 +46,26 @@ public class ListaEmpleados {
         return datos; // retorna la matriz con los datos de los empleados
     }
 
+    public String convertirTexto(){
+        String texto = ""; // cadena de texto que contendra la informacion
+        for (int counter = 0; counter < lista.size(); counter++){
+            Empleado empleado_actual = (Empleado) lista.elementAt(counter); // obtiene el empleado actual
+            texto += "Nombre: " + empleado_actual.getNombre() + "\n" + 
+                        "Apellidos: " + empleado_actual.getApellidos() + "\n" +
+                        "Cargo: " + empleado_actual.gerCargo().toString() + "\n" +
+                        "Genero: " + empleado_actual.getGenero().toString() + "\n" +
+                        "Salario: " + empleado_actual.getSalarioDiario() + "\n" +
+                        "Días Trabajados: " + empleado_actual.getDiasTrabajados() + "\n" +
+                        "Otros Ingresos: " + empleado_actual.getOtrosIngresos() + "\n" +
+                        "Pagos Salud: " + empleado_actual.getPagosSalud() + "\n" +
+                        "Aporte Pensiones: " + empleado_actual.getAportePensiones() + "\n \n";
+        }
+
+        texto = texto + "Total de nómina: " + String.format("%.2f", calcularNominaTotal());; // agrega el total de la nomina al final del texto
+        return texto; // retorna el texto con la informacion de los empleados
+    }
+
+    
+
 
 }

@@ -14,9 +14,9 @@ public class VentanaAgregarEmpleado extends javax.swing.JFrame {
         campo_nombre.setText("");
         campo_apellidos.setText("");
         cargo.setSelectedIndex(0);
-        grupo_genero.clearSelection();
+        grupo_genero.setSelected(boton_masculino.getModel(), true);
         campo_salarioDiario.setText("");
-        spinner_diasLaborados.setValue(0);
+        spinner_diasLaborados.setValue(1);
         campo_otrosIngresos.setText("");
         campo_salud.setText("");
         campo_pensiones.setText("");
@@ -28,7 +28,8 @@ public class VentanaAgregarEmpleado extends javax.swing.JFrame {
      * Creates new form VentanaAgregarEmpleado
      */
     public VentanaAgregarEmpleado() {
-        initComponents();
+        initComponents();      
+        
     }
 
     /**
@@ -63,7 +64,7 @@ public class VentanaAgregarEmpleado extends javax.swing.JFrame {
         boton_limpiar = new javax.swing.JButton();
         spinner_diasLaborados = new javax.swing.JSpinner();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Agregar empleado");
         setResizable(false);
 
@@ -73,7 +74,7 @@ public class VentanaAgregarEmpleado extends javax.swing.JFrame {
 
         jLabel3.setText("Cargo:");
 
-        cargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cargo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Directivo", "Estratégico", "Operativo" }));
         cargo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 cargoActionPerformed(evt);
@@ -83,6 +84,7 @@ public class VentanaAgregarEmpleado extends javax.swing.JFrame {
         jLabel4.setText("Género:");
 
         grupo_genero.add(boton_masculino);
+        boton_masculino.setSelected(true);
         boton_masculino.setText("Masculino");
 
         grupo_genero.add(boton_femenino);
@@ -99,6 +101,11 @@ public class VentanaAgregarEmpleado extends javax.swing.JFrame {
         jLabel9.setText("Aportes pensiones:");
 
         boton_agregar.setText("Agregar");
+        boton_agregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_agregarActionPerformed(evt);
+            }
+        });
 
         boton_limpiar.setText("Limpiar");
         boton_limpiar.addActionListener(new java.awt.event.ActionListener() {
@@ -106,6 +113,8 @@ public class VentanaAgregarEmpleado extends javax.swing.JFrame {
                 boton_limpiarActionPerformed(evt);
             }
         });
+
+        spinner_diasLaborados.setModel(new javax.swing.SpinnerNumberModel(1, 1, 31, 1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -206,6 +215,10 @@ public class VentanaAgregarEmpleado extends javax.swing.JFrame {
     private void cargoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cargoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cargoActionPerformed
+
+    private void boton_agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_agregarActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_boton_agregarActionPerformed
 
     /**
      * @param args the command line arguments
