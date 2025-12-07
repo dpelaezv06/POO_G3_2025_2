@@ -4,19 +4,31 @@
  */
 package com.mycompany.ejercicio_8_4;
 
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author daniel
  */
 public class VentanaNomina extends javax.swing.JFrame {
+    ListaEmpleados lista;
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VentanaNomina.class.getName());
 
     /**
      * Creates new form VentanaNomina
      */
-    public VentanaNomina() {
+    public VentanaNomina(ListaEmpleados lista) {
         initComponents();
+        this.lista = lista;
+        String[][] datos = lista.obtenerMatriz();
+        String[] titulos = {"NOMBRE", "APELLIDOS", "SUELDO"};
+        DefaultTableModel modelo = new DefaultTableModel(datos, titulos);
+        
+    }
+
+    private VentanaNomina() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     /**
@@ -28,17 +40,54 @@ public class VentanaNomina extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        empleados = new javax.swing.JLabel();
+        nomina = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        tabla = new javax.swing.JTable();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Nómina de empleados");
+        setResizable(false);
+
+        empleados.setText("Lista de empleados");
+
+        nomina.setText("jLabel2");
+
+        tabla.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(tabla);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 379, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(47, 47, 47)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 355, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(nomina)
+                    .addComponent(empleados))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 398, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(54, 54, 54)
+                .addComponent(empleados)
+                .addGap(18, 18, 18)
+                .addComponent(nomina)
+                .addGap(18, 18, 18)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 402, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(82, Short.MAX_VALUE))
         );
 
         pack();
@@ -70,5 +119,9 @@ public class VentanaNomina extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel empleados;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel nomina;
+    private javax.swing.JTable tabla;
     // End of variables declaration//GEN-END:variables
 }

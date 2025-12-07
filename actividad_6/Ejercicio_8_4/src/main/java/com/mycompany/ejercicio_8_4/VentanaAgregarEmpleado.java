@@ -4,11 +4,18 @@
  */
 package com.mycompany.ejercicio_8_4;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author daniel
  */
 public class VentanaAgregarEmpleado extends javax.swing.JFrame {
+    private ListaEmpleados lista;
+
+    private VentanaAgregarEmpleado() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
 
     void limpiar_campos() {
         campo_nombre.setText("");
@@ -22,13 +29,60 @@ public class VentanaAgregarEmpleado extends javax.swing.JFrame {
         campo_pensiones.setText("");
     }
     
+    private void anadirEmpleado(){
+        TipoCargo tipo_cargo;
+        TipoGenero tipo_genero;
+        String item_seleccionado = (String) cargo.getSelectedItem();
+        if (item_seleccionado == "Directivo"){
+            tipo_cargo = TipoCargo.DIRECTIVO;            
+        }else if (item_seleccionado == "Estratégico"){
+            tipo_cargo = TipoCargo.ESTRATEGICO;            
+        } else{
+            tipo_cargo = TipoCargo.OPERATIVO;
+        }
+        
+        if (boton_masculino.isSelected()){
+            tipo_genero = TipoGenero.MASCULINO;
+        }else{
+            tipo_genero = TipoGenero.FEMENINO;
+        }
+        
+        try {
+            String nombre = campo_nombre.getText();
+            String apellido = campo_apellidos.getText();
+            
+            double salario = Double.parseDouble(campo_salarioDiario.getText());
+            int dias_laborados = (int) spinner_diasLaborados.getValue();
+            double otros_ingresos = Double.parseDouble(campo_otrosIngresos.getText());
+            double aportes_salud = Double.parseDouble(campo_salud.getText());
+            double aportes_pensiones = Double.parseDouble(campo_pensiones.getText());
+            
+            Empleado nuevo_empleado = new Empleado(nombre, apellido, tipo_cargo, tipo_genero, salario, dias_laborados, otros_ingresos, aportes_salud, aportes_pensiones);
+            lista.agregarEmpleado(nuevo_empleado);
+            
+            JOptionPane.showMessageDialog(this, "El empleado ha sido agregado con éxito", "Mensaje", JOptionPane.INFORMATION_MESSAGE, null);
+            
+            limpiar_campos();
+            
+            
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(null, "Campo nulo o error en formato de número", "Error", JOptionPane.ERROR_MESSAGE);
+            
+        }
+        
+        
+        
+        
+    }
+    
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VentanaAgregarEmpleado.class.getName());
 
     /**
      * Creates new form VentanaAgregarEmpleado
      */
-    public VentanaAgregarEmpleado() {
-        initComponents();      
+    public VentanaAgregarEmpleado(ListaEmpleados lista) {
+        initComponents();
+        this.lista = lista;
         
     }
 
@@ -218,6 +272,8 @@ public class VentanaAgregarEmpleado extends javax.swing.JFrame {
 
     private void boton_agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_agregarActionPerformed
         // TODO add your handling code here:
+        
+        
     }//GEN-LAST:event_boton_agregarActionPerformed
 
     /**
