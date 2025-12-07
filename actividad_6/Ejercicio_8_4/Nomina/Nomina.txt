@@ -1,11 +1,21 @@
-Nombre: hghjg
-Apellidos: fhghjj
+Nombre: Juan
+Apellidos: Juan
 Cargo: ESTRATEGICO
-Genero: FEMENINO
-Salario: 30.0
-Días Trabajados: 6
-Otros Ingresos: 9.0
-Pagos Salud: 87.0
-Aporte Pensiones: 7.0
+Genero: MASCULINO
+Salario: 3.0
+Días Trabajados: 31
+Otros Ingresos: 2.0
+Pagos Salud: 1.0
+Aporte Pensiones: 1.0
 ----------
-Total de nómina: 95.00
+Nombre: Marta
+Apellidos: Sanchez
+Cargo: DIRECTIVO
+Genero: FEMENINO
+Salario: 8.0
+Días Trabajados: 15
+Otros Ingresos: 5.0
+Pagos Salud: 3.0
+Aporte Pensiones: 1.0
+----------
+Total de nómina: 214.00
