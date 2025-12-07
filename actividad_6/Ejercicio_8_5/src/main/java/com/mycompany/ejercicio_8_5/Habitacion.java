@@ -44,6 +44,4 @@ public class Habitacion {
         this.disponible = disponible;
     }
 
-    
-    
 }
