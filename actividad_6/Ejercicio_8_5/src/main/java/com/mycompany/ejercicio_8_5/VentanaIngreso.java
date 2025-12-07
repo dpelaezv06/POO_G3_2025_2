@@ -8,6 +8,13 @@ package com.mycompany.ejercicio_8_5;
  *
  * @author daniel
  */
+import java.util.*;
+
+import javax.swing.*;
+
+import java.awt.*;
+import java.awt.event.ActionListener;
+
 public class VentanaIngreso extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VentanaIngreso.class.getName());
@@ -15,8 +22,71 @@ public class VentanaIngreso extends javax.swing.JFrame {
     /**
      * Creates new form VentanaIngreso
      */
-    public VentanaIngreso() {
+
+    private Hotel hotel;
+    private int numero_habitacionReservada;
+    private Date fecha_inicial;
+    private Container contenedor;
+    private JLabel fecha_ingreso;
+    private JTextField campo_fechaIngreso;
+
+
+    public VentanaIngreso(Hotel hotel, int numero_habitacionReservada) {
+        this.hotel = hotel;
+        this.numero_habitacionReservada = numero_habitacionReservada;
         initComponents();
+        setLocationRelativeTo(null);
+        setResizable(false);
+        contenedor = getContentPane();
+        contenedor.setLayout(new GridBagLayout());
+        GridBagConstraints constraints = new GridBagConstraints();
+        constraints.fill = GridBagConstraints.HORIZONTAL;
+        constraints.insets = new Insets(3, 3, 3, 3);
+        label_numeroHabitacion.setText("Habitación: " + numero_habitacionReservada);
+        constraints.gridx = 0;
+        constraints.gridy = 0;
+        contenedor.add(label_numeroHabitacion, constraints);
+        constraints.gridx = 0;
+        constraints.gridy = 1;
+        contenedor.add(fecha_ingreso, constraints);
+        constraints.gridx = 1;
+        constraints.gridy = 1;
+        contenedor.add(campo_fechaIngreso, constraints);
+        constraints.gridx = 0;
+        constraints.gridy = 2;
+        contenedor.add(label_huesped, constraints);
+        constraints.gridx = 0;
+        constraints.gridy = 3;
+        contenedor.add(label_nombre, constraints);
+        constraints.gridx = 1;
+        constraints.gridy = 3;
+        contenedor.add(campo_nombre, constraints);
+        constraints.gridx = 0;
+        constraints.gridy = 4;
+        contenedor.add(label_apellidos, constraints);
+        constraints.gridx = 1;
+        constraints.gridy = 4;
+        contenedor.add(campo_apellidos, constraints);
+        constraints.gridx = 0;
+        constraints.gridy = 5;
+        contenedor.add(label_identificacion, constraints);
+        constraints.gridx = 1;
+        constraints.gridy = 5;
+        contenedor.add(campo_identificacion, constraints);
+        constraints.gridx = 0;
+        constraints.gridy = 6;
+        contenedor.add(boton_aceptar, constraints);
+        boton_aceptar.addActionListener((ActionListener) this);
+        constraints.gridx = 1;
+        constraints.gridy = 6;
+        contenedor.add(boton_cancelar, constraints);
+        boton_cancelar.addActionListener((ActionListener) this);
+        
+
+    }
+
+    private VentanaIngreso() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     /**
