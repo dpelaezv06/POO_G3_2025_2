@@ -16,12 +16,10 @@ public class Huesped {
     private Date fecha_ingreso;
     private Date fecha_salida;
 
-    public Huesped(String nombre, String apellidos, int documento_identificacion, Date fecha_ingreso, Date fecha_salida) {
+    public Huesped(String nombre, String apellidos, int documento_identificacion) {
         this.nombre = nombre;
         this.apellidos = apellidos;
         this.documento_identificacion = documento_identificacion;
-        this.fecha_ingreso = fecha_ingreso;
-        this.fecha_salida = fecha_salida;
     }
 
     public int diasAlojamiento() {

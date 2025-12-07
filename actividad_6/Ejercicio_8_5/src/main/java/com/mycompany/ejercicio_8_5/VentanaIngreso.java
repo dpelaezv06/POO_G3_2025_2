@@ -14,6 +14,7 @@ import javax.swing.*;
 
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.text.SimpleDateFormat;
 
 public class VentanaIngreso extends javax.swing.JFrame {
     
@@ -27,14 +28,12 @@ public class VentanaIngreso extends javax.swing.JFrame {
     private int numero_habitacionReservada;
     private Date fecha_inicial;
     private Container contenedor;
-    private JLabel fecha_ingreso;
-    private JTextField campo_fechaIngreso;
-
 
     public VentanaIngreso(Hotel hotel, int numero_habitacionReservada) {
         this.hotel = hotel;
         this.numero_habitacionReservada = numero_habitacionReservada;
         initComponents();
+
         setLocationRelativeTo(null);
         setResizable(false);
         contenedor = getContentPane();
@@ -48,10 +47,10 @@ public class VentanaIngreso extends javax.swing.JFrame {
         contenedor.add(label_numeroHabitacion, constraints);
         constraints.gridx = 0;
         constraints.gridy = 1;
-        contenedor.add(fecha_ingreso, constraints);
+        contenedor.add(label_fecha, constraints);
         constraints.gridx = 1;
         constraints.gridy = 1;
-        contenedor.add(campo_fechaIngreso, constraints);
+        contenedor.add(campo_fecha, constraints);
         constraints.gridx = 0;
         constraints.gridy = 2;
         contenedor.add(label_huesped, constraints);
@@ -127,6 +126,11 @@ public class VentanaIngreso extends javax.swing.JFrame {
         label_identificacion.setText("Identificación");
 
         boton_aceptar.setText("Aceptar");
+        boton_aceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_aceptarActionPerformed(evt);
+            }
+        });
 
         boton_cancelar.setText("Cancelar");
 
@@ -192,6 +196,24 @@ public class VentanaIngreso extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void boton_aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_aceptarActionPerformed
+        // TODO add your handling code here:
+        int posicion = -1;
+        for (int counter = 0; counter < hotel.lista_habitaciones.size(); counter++){
+            Habitacion habitacion_actual = hotel.lista_habitaciones.elementAt(counter);
+            if (habitacion_actual.getNumeroHabitacion() == this.numero_habitacionReservada){
+                try{
+                    posicion = counter;
+                    String fechaIngresada = campo_fecha.getText();
+                    SimpleDateFormat formato = new SimpleDateFormat("yyyy/MM/dd");
+                    Date fecha = formato.parse(fechaIngresada);
+
+                    Huesped huesped = new Huesped(campo_nombre.getText(), campo_apellidos.getText(), Integer.parseInt(campo_identificacion.getText()));
+                }
+            }
+        }        
+    }//GEN-LAST:event_boton_aceptarActionPerformed
 
     /**
      * @param args the command line arguments
