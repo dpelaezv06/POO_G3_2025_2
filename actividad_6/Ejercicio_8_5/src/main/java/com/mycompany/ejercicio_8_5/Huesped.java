@@ -24,17 +24,11 @@ public class Huesped {
         this.fecha_salida = fecha_salida;
     }
 
-    public String getNombre() {
-        return nombre;
-    }
+    public int diasAlojamiento() {
+        int dias = (int) ((fecha_salida.getTime() - fecha_ingreso.getTime()) / (1000 * 60 * 60 * 24)); // se divide por milisegundos, segundos, minutos y horas
+        return dias;
+    }   
 
-    public String getApellidos() {
-        return apellidos;
-    }
-
-    public int getDocumento_identificacion() {
-        return documento_identificacion;
-    }
 
     public Date getFecha_ingreso() {
         return fecha_ingreso;
@@ -42,18 +36,6 @@ public class Huesped {
 
     public Date getFecha_salida() {
         return fecha_salida;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setApellidos(String apellidos) {
-        this.apellidos = apellidos;
-    }
-
-    public void setDocumento_identificacion(int documento_identificacion) {
-        this.documento_identificacion = documento_identificacion;
     }
 
     public void setFecha_ingreso(Date fecha_ingreso) {
