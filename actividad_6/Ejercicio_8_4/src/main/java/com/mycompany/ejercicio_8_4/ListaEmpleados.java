@@ -41,8 +41,9 @@ public class ListaEmpleados {
             datos[counter][0] = empleado_actual.getNombre(); // obtiene el nombre del empleado
             datos[counter][1] = empleado_actual.getApellidos(); // obtiene los apellidos del
             datos[counter][2] = Double.toString(empleado_actual.calcularNomina()); // obtiene la nomina del empleado
-            total_nomina += empleado_actual.calcularNomina(); // suma la nomina del empleado actual al total
         }
+        total_nomina = 0;
+        total_nomina = calcularNominaTotal(); // suma la nomina del empleado actual al total
         return datos; // retorna la matriz con los datos de los empleados
     }
 
@@ -58,9 +59,9 @@ public class ListaEmpleados {
                         "Días Trabajados: " + empleado_actual.getDiasTrabajados() + "\n" +
                         "Otros Ingresos: " + empleado_actual.getOtrosIngresos() + "\n" +
                         "Pagos Salud: " + empleado_actual.getPagosSalud() + "\n" +
-                        "Aporte Pensiones: " + empleado_actual.getAportePensiones() + "\n \n";
+                        "Aporte Pensiones: " + empleado_actual.getAportePensiones() + "\n----------\n";
         }
-
+        total_nomina = 0;
         texto = texto + "Total de nómina: " + String.format("%.2f", calcularNominaTotal());; // agrega el total de la nomina al final del texto
         return texto; // retorna el texto con la informacion de los empleados
     }

@@ -273,6 +273,7 @@ public class VentanaAgregarEmpleado extends javax.swing.JFrame {
     private void boton_agregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_agregarActionPerformed
         // TODO add your handling code here:
         
+        anadirEmpleado();        
         
     }//GEN-LAST:event_boton_agregarActionPerformed
 

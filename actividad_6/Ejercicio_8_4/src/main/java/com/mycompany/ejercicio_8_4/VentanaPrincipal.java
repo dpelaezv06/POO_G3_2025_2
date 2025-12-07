@@ -116,7 +116,7 @@ public class VentanaPrincipal extends javax.swing.JFrame {
             String nombre = directorio_elegido.getName();            
             try {
                 String contenido_archivo = empleados.convertirTexto();                
-                File archivo = new File(nombre + "\\" + "Nómina.txt");
+                File archivo = new File(nombre + "/" + "Nomina.txt"); // como estoy usando una maquina con linux el separador es "/" y no "\\"
                 archivo.createNewFile();
                 FileWriter file_writer = new FileWriter(archivo);
                 BufferedWriter buffered_writer = new BufferedWriter(file_writer);

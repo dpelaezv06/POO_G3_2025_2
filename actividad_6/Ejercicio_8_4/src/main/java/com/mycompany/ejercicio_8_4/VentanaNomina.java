@@ -24,6 +24,8 @@ public class VentanaNomina extends javax.swing.JFrame {
         String[][] datos = lista.obtenerMatriz();
         String[] titulos = {"NOMBRE", "APELLIDOS", "SUELDO"};
         DefaultTableModel modelo = new DefaultTableModel(datos, titulos);
+        tabla.setModel(modelo);
+        nomina.setText("Total nómina mensual: $ " + String.format("%.2f", lista.total_nomina));
         
     }
 
