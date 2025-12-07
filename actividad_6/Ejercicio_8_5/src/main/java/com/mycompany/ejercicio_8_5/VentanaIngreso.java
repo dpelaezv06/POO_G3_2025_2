@@ -28,17 +28,96 @@ public class VentanaIngreso extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        label_numeroHabitacion = new javax.swing.JLabel();
+        label_fecha = new javax.swing.JLabel();
+        label_huesped = new javax.swing.JLabel();
+        label_nombre = new javax.swing.JLabel();
+        label_apellidos = new javax.swing.JLabel();
+        label_identificacion = new javax.swing.JLabel();
+        campo_fecha = new javax.swing.JTextField();
+        boton_aceptar = new javax.swing.JButton();
+        boton_cancelar = new javax.swing.JButton();
+        campo_nombre = new javax.swing.JTextField();
+        campo_apellidos = new javax.swing.JTextField();
+        campo_identificacion = new javax.swing.JTextField();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Ingreso");
+
+        label_numeroHabitacion.setText("Habitación: 1");
+
+        label_fecha.setText("Fecha (aaaa/mm/dd)");
+
+        label_huesped.setText("Huésped");
+
+        label_nombre.setText("Nombre");
+
+        label_apellidos.setText("Apellidos");
+
+        label_identificacion.setText("Identificación");
+
+        boton_aceptar.setText("Aceptar");
+
+        boton_cancelar.setText("Cancelar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(26, 26, 26)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(label_numeroHabitacion)
+                            .addComponent(label_huesped)
+                            .addGroup(layout.createSequentialGroup()
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(label_nombre)
+                                    .addComponent(label_apellidos)
+                                    .addComponent(label_identificacion)
+                                    .addComponent(label_fecha))
+                                .addGap(21, 21, 21)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(campo_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(campo_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(campo_apellidos, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(campo_identificacion, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(95, 95, 95)
+                        .addComponent(boton_aceptar)
+                        .addGap(38, 38, 38)
+                        .addComponent(boton_cancelar)))
+                .addContainerGap(24, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(34, 34, 34)
+                .addComponent(label_numeroHabitacion)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(label_fecha)
+                    .addComponent(campo_fecha, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addComponent(label_huesped)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(label_nombre)
+                    .addComponent(campo_nombre, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(campo_apellidos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_apellidos))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(campo_identificacion, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(label_identificacion))
+                .addGap(29, 29, 29)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(boton_aceptar)
+                    .addComponent(boton_cancelar))
+                .addContainerGap(29, Short.MAX_VALUE))
         );
 
         pack();
@@ -70,5 +149,17 @@ public class VentanaIngreso extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton boton_aceptar;
+    private javax.swing.JButton boton_cancelar;
+    private javax.swing.JTextField campo_apellidos;
+    private javax.swing.JTextField campo_fecha;
+    private javax.swing.JTextField campo_identificacion;
+    private javax.swing.JTextField campo_nombre;
+    private javax.swing.JLabel label_apellidos;
+    private javax.swing.JLabel label_fecha;
+    private javax.swing.JLabel label_huesped;
+    private javax.swing.JLabel label_identificacion;
+    private javax.swing.JLabel label_nombre;
+    private javax.swing.JLabel label_numeroHabitacion;
     // End of variables declaration//GEN-END:variables
 }
