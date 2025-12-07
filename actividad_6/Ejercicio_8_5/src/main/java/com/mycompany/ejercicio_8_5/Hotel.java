@@ -46,12 +46,13 @@ public class Hotel {
             if (habitacion_actual.getNumeroHabitacion() == numero_habitacion){
                 Date fecha_ingreso = habitacion_actual.getHuesped().getFecha_ingreso();
                 DateFormat formato_fecha = new SimpleDateFormat("yyyy/MM/dd");
-
-
-                return fecha_ingreso.toString();
+                String fecha = formato_fecha.format(fecha_ingreso);
+                return fecha;
             }
                         
         }
+
+        return "";
     }
 
     
