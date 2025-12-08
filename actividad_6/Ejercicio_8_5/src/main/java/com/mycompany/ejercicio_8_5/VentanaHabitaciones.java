@@ -8,6 +8,9 @@ package com.mycompany.ejercicio_8_5;
  *
  * @author daniel
  */
+
+import java.awt.*;
+
 public class VentanaHabitaciones extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VentanaHabitaciones.class.getName());
@@ -15,6 +18,8 @@ public class VentanaHabitaciones extends javax.swing.JFrame {
     /**
      * Creates new form VentanaHabitaciones
      */
+    private Container contenedor;
+
     public VentanaHabitaciones(Hotel hotel) {
         initComponents();
     }
@@ -32,17 +37,186 @@ public class VentanaHabitaciones extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        label_habitacion1 = new javax.swing.JLabel();
+        label_disponibilidad1 = new javax.swing.JLabel();
+        label_habitacion2 = new javax.swing.JLabel();
+        label_habitacion3 = new javax.swing.JLabel();
+        label_habitacion4 = new javax.swing.JLabel();
+        label_disponibilidad4 = new javax.swing.JLabel();
+        label_habitacion5 = new javax.swing.JLabel();
+        label_disponibilidad5 = new javax.swing.JLabel();
+        label_habitacion6 = new javax.swing.JLabel();
+        label_disponibilidad6 = new javax.swing.JLabel();
+        label_habitacion7 = new javax.swing.JLabel();
+        label_disponibilidad7 = new javax.swing.JLabel();
+        label_disponibilidad2 = new javax.swing.JLabel();
+        label_disponibilidad3 = new javax.swing.JLabel();
+        label_habitacion8 = new javax.swing.JLabel();
+        label_disponibilidad8 = new javax.swing.JLabel();
+        label_habitacion9 = new javax.swing.JLabel();
+        label_disponibilidad9 = new javax.swing.JLabel();
+        label_habitacion10 = new javax.swing.JLabel();
+        label_disponibilidad10 = new javax.swing.JLabel();
+        label_habitacionRequerida = new javax.swing.JLabel();
+        spinner_habitacionRequerida = new javax.swing.JSpinner();
+        boton_aceptar = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Habitaciones");
+
+        label_habitacion1.setText("Habitación 1");
+
+        label_disponibilidad1.setText("Disponible");
+
+        label_habitacion2.setText("Habitación 2");
+
+        label_habitacion3.setText("Habitación 3");
+
+        label_habitacion4.setText("Habitación 4");
+
+        label_disponibilidad4.setText("Disponible");
+
+        label_habitacion5.setText("Habitación 5");
+
+        label_disponibilidad5.setText("Disponible");
+
+        label_habitacion6.setText("Habitación 6");
+
+        label_disponibilidad6.setText("Disponible");
+
+        label_habitacion7.setText("Habitación 7");
+
+        label_disponibilidad7.setText("Disponible");
+
+        label_disponibilidad2.setText("Disponible");
+
+        label_disponibilidad3.setText("Disponible");
+
+        label_habitacion8.setText("Habitación 8");
+
+        label_disponibilidad8.setText("Disponible");
+
+        label_habitacion9.setText("Habitación 9");
+
+        label_disponibilidad9.setText("Disponible");
+
+        label_habitacion10.setText("Habitación 10");
+
+        label_disponibilidad10.setText("Disponible");
+
+        label_habitacionRequerida.setText("Habitación a reservar:");
+
+        boton_aceptar.setText("Aceptar");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(label_habitacion1)
+                                .addGap(90, 90, 90))
+                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                                .addComponent(label_disponibilidad1)
+                                .addGap(102, 102, 102)))
+                        .addGap(12, 12, 12))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(label_habitacion6)
+                            .addComponent(label_disponibilidad6))
+                        .addGap(102, 102, 102)))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label_habitacion7)
+                    .addComponent(label_habitacion2)
+                    .addComponent(label_disponibilidad2)
+                    .addComponent(label_disponibilidad7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 89, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label_disponibilidad3)
+                    .addComponent(label_habitacion3)
+                    .addComponent(label_habitacion8)
+                    .addComponent(label_disponibilidad8))
+                .addGap(103, 103, 103)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label_disponibilidad4)
+                    .addComponent(label_habitacion4)
+                    .addComponent(label_habitacion9)
+                    .addComponent(label_disponibilidad9))
+                .addGap(91, 91, 91)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label_habitacion5)
+                    .addComponent(label_disponibilidad5)
+                    .addComponent(label_habitacion10)
+                    .addComponent(label_disponibilidad10))
+                .addGap(28, 28, 28))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(217, 217, 217)
+                .addComponent(label_habitacionRequerida)
+                .addGap(18, 18, 18)
+                .addComponent(spinner_habitacionRequerida, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(90, 90, 90)
+                .addComponent(boton_aceptar)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(27, 27, 27)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(label_habitacion3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(label_disponibilidad3)
+                        .addGap(40, 40, 40)
+                        .addComponent(label_habitacion8)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(label_disponibilidad8))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(label_habitacion4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(label_disponibilidad4)
+                        .addGap(40, 40, 40)
+                        .addComponent(label_habitacion9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(label_disponibilidad9))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(label_habitacion1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(label_disponibilidad1))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(label_habitacion5)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(label_disponibilidad5))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(label_habitacion2)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(label_disponibilidad2)))
+                        .addGap(40, 40, 40)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(label_habitacion6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(label_disponibilidad6))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(label_habitacion7)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(label_disponibilidad7))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(label_habitacion10)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(label_disponibilidad10)))))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(label_habitacionRequerida)
+                    .addComponent(spinner_habitacionRequerida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(boton_aceptar))
+                .addGap(16, 16, 16))
         );
 
         pack();
@@ -74,5 +248,28 @@ public class VentanaHabitaciones extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton boton_aceptar;
+    private javax.swing.JLabel label_disponibilidad1;
+    private javax.swing.JLabel label_disponibilidad10;
+    private javax.swing.JLabel label_disponibilidad2;
+    private javax.swing.JLabel label_disponibilidad3;
+    private javax.swing.JLabel label_disponibilidad4;
+    private javax.swing.JLabel label_disponibilidad5;
+    private javax.swing.JLabel label_disponibilidad6;
+    private javax.swing.JLabel label_disponibilidad7;
+    private javax.swing.JLabel label_disponibilidad8;
+    private javax.swing.JLabel label_disponibilidad9;
+    private javax.swing.JLabel label_habitacion1;
+    private javax.swing.JLabel label_habitacion10;
+    private javax.swing.JLabel label_habitacion2;
+    private javax.swing.JLabel label_habitacion3;
+    private javax.swing.JLabel label_habitacion4;
+    private javax.swing.JLabel label_habitacion5;
+    private javax.swing.JLabel label_habitacion6;
+    private javax.swing.JLabel label_habitacion7;
+    private javax.swing.JLabel label_habitacion8;
+    private javax.swing.JLabel label_habitacion9;
+    private javax.swing.JLabel label_habitacionRequerida;
+    private javax.swing.JSpinner spinner_habitacionRequerida;
     // End of variables declaration//GEN-END:variables
 }
