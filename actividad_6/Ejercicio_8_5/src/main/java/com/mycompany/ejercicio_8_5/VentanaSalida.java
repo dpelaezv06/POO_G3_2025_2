@@ -190,7 +190,7 @@ public class VentanaSalida extends javax.swing.JFrame {
                     if (fecha_ingresoDate.compareTo(fecha_salidaDate) < 0){
                         int dias_hospedaje = habitacion_ocupada.getHuesped().diasAlojamiento();
                         label_cantidadDias.setText("Días de hospedaje: " + dias_hospedaje);
-                        double valor_total = dias_hospedaje * habitacion_ocupada.getPrecioNoche();
+                        double valor_total = dias_hospedaje * habitacion_ocupada.getPrecioDia();
                         label_valorTotal.setText("Total: $" + valor_total);
                         boton_registrarSalida.setEnabled(true);
                     }else{
