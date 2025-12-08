@@ -114,6 +114,7 @@ public class VentanaIngreso extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Ingreso");
+        setResizable(false);
 
         label_numeroHabitacion.setText("Habitación: 1");
 
