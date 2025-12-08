@@ -6,7 +6,9 @@ package com.mycompany.ejercicio_9_1;
 
 import java.time.LocalDate;
 
-import javafx.application.Application;
+import javafx.geometry.Insets;
+import javafx.geometry.Pos;
+import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
@@ -15,14 +17,13 @@ import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.VBox;
-import javafx.stage.Stage;
 
 /**
  *
  * @author daniel
  */
 
-public class VentanaContacto extends Application {
+public class VentanaContacto {
     Label nombres = new Label("Nombres: ");
     Label apellidos = new Label("Apellidos: ");
     Label fechaNacimiento = new Label("Fecha de nacimiento: ");
@@ -40,15 +41,14 @@ public class VentanaContacto extends Application {
 
     Button botonAgregar = new Button("Agregar");
 
-    public static void main(String[] args) {
-        Application.launch(args);
-    }
 
-    @Override
-    public void start(Stage stage) throws Exception {
+
+    public Scene getScene() {
         GridPane grid = new GridPane();
         grid.setHgap(5);
         grid.setVgap(5);
+        grid.setPadding(new Insets(20));
+        grid.setAlignment(Pos.CENTER);
         grid.add(nombres, 0, 0);
         grid.add(apellidos, 0, 1);
         grid.add(fechaNacimiento, 0, 2);
@@ -66,6 +66,8 @@ public class VentanaContacto extends Application {
         botonAgregar.setMaxWidth(Double.MAX_VALUE);
         grid.add(buttonBox, 0, 6, 1, 2);
         botonAgregar.setOnAction(e -> mostrarDatos());
+
+        return new Scene(grid, 700, 400);
     }
 
     private void mostrarDatos(){
@@ -85,7 +87,6 @@ public class VentanaContacto extends Application {
             
         }else{
             Contacto contacto = new Contacto(nombre, apellido, fechaNacimiento, direccion, telefono, correoElectronico);
-            lista.getItems().add(contacto);
             ListaContacto listaContactos = new ListaContacto();
             listaContactos.agregarContacto(contacto);
             String datos = nombre + "-" + apellido + "-" + fechaNacimiento + "-" + direccion + "-" + telefono + "-" + correoElectronico;
