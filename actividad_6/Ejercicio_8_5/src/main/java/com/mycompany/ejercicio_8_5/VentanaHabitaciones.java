@@ -19,9 +19,61 @@ public class VentanaHabitaciones extends javax.swing.JFrame {
      * Creates new form VentanaHabitaciones
      */
     private Container contenedor;
+    private Hotel hotel;
 
     public VentanaHabitaciones(Hotel hotel) {
+        this.hotel = hotel;
         initComponents();
+        contenedor = getContentPane();
+        contenedor.setLayout(null);
+
+        Habitacion habitacion_actual;
+        for (int counter = 0; counter < 10; counter++) {
+            habitacion_actual = (Habitacion) hotel.lista_habitaciones.elementAt(counter);
+            String disponibilidad;
+            if (!habitacion_actual.getDisponible()){
+                disponibilidad = "No disponible";
+            } else {
+                disponibilidad = "Disponible";
+            }
+            switch (counter) {
+                case 0 -> label_disponibilidad1.setText(disponibilidad);
+                case 1 -> label_disponibilidad2.setText(disponibilidad);
+                case 2 -> label_disponibilidad3.setText(disponibilidad);
+                case 3 -> label_disponibilidad4.setText(disponibilidad);
+                case 4 -> label_disponibilidad5.setText(disponibilidad);
+                case 5 -> label_disponibilidad6.setText(disponibilidad);
+                case 6 -> label_disponibilidad7.setText(disponibilidad);
+                case 7 -> label_disponibilidad8.setText(disponibilidad);
+                case 8 -> label_disponibilidad9.setText(disponibilidad);
+                case 9 -> label_disponibilidad10.setText(disponibilidad);
+            }
+        }
+
+        contenedor.add(label_habitacion1);
+        contenedor.add(label_disponibilidad1);
+        contenedor.add(label_habitacion2);
+        contenedor.add(label_disponibilidad2);
+        contenedor.add(label_habitacion3);
+        contenedor.add(label_disponibilidad3);
+        contenedor.add(label_habitacion4);
+        contenedor.add(label_disponibilidad4);
+        contenedor.add(label_habitacion5);
+        contenedor.add(label_disponibilidad5);
+        contenedor.add(label_habitacion6);
+        contenedor.add(label_disponibilidad6);
+        contenedor.add(label_habitacion7);
+        contenedor.add(label_disponibilidad7);
+        contenedor.add(label_habitacion8);
+        contenedor.add(label_disponibilidad8);
+        contenedor.add(label_habitacion9);
+        contenedor.add(label_disponibilidad9);
+        contenedor.add(label_habitacion10);
+        contenedor.add(label_disponibilidad10);
+        contenedor.add(label_habitacionRequerida);
+        contenedor.add(spinner_habitacionRequerida);
+        contenedor.add(boton_aceptar);
+
     }
 
     private VentanaHabitaciones() {
@@ -63,6 +115,7 @@ public class VentanaHabitaciones extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Habitaciones");
+        setResizable(false);
 
         label_habitacion1.setText("Habitación 1");
 
@@ -105,6 +158,8 @@ public class VentanaHabitaciones extends javax.swing.JFrame {
         label_disponibilidad10.setText("Disponible");
 
         label_habitacionRequerida.setText("Habitación a reservar:");
+
+        spinner_habitacionRequerida.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
 
         boton_aceptar.setText("Aceptar");
 
