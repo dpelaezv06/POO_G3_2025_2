@@ -11,6 +11,8 @@ package com.mycompany.ejercicio_8_5;
 public class Ejercicio_8_5 {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Hotel hotel = new Hotel();
+        VentanaPrincipal ventanaPrincipal = new VentanaPrincipal(hotel);
+        ventanaPrincipal.setVisible(true);
     }
 }

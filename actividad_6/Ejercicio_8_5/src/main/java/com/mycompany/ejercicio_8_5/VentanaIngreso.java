@@ -14,6 +14,7 @@ import javax.swing.*;
 
 import java.awt.*;
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 
 public class VentanaIngreso extends javax.swing.JFrame {
@@ -28,6 +29,7 @@ public class VentanaIngreso extends javax.swing.JFrame {
     private int numero_habitacionReservada;
     private Date fecha_inicial;
     private Container contenedor;
+    private Habitacion habitacion_reservada;
 
     public VentanaIngreso(Hotel hotel, int numero_habitacionReservada) {
         this.hotel = hotel;
@@ -110,7 +112,7 @@ public class VentanaIngreso extends javax.swing.JFrame {
         campo_apellidos = new javax.swing.JTextField();
         campo_identificacion = new javax.swing.JTextField();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Ingreso");
 
         label_numeroHabitacion.setText("Habitación: 1");
@@ -210,6 +212,17 @@ public class VentanaIngreso extends javax.swing.JFrame {
                     Date fecha = formato.parse(fechaIngresada);
 
                     Huesped huesped = new Huesped(campo_nombre.getText(), campo_apellidos.getText(), Integer.parseInt(campo_identificacion.getText()));
+                    habitacion_actual.setHuesped(huesped);
+                    habitacion_actual.setDisponible(false);
+                    habitacion_reservada = habitacion_actual;
+                    hotel.lista_habitaciones.set(posicion, habitacion_actual);
+                    JOptionPane.showMessageDialog(this, "El huesped ha sido registrado exitosamente.", "Mensaje", JOptionPane.INFORMATION_MESSAGE);
+                    setVisible(false);
+                    break;
+                }catch (ParseException parse_exception){
+                    JOptionPane.showMessageDialog(this, "Error en el formato de la fecha. Use aaaa/mm/dd.", "Error", JOptionPane.ERROR_MESSAGE);
+                }catch (Exception exception){
+                    JOptionPane.showMessageDialog(this, "Campo nulo o error en formato de número", "Error", JOptionPane.ERROR_MESSAGE);
                 }
             }
         }        

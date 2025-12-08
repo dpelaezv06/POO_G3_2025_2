@@ -15,8 +15,12 @@ public class VentanaSalida extends javax.swing.JFrame {
     /**
      * Creates new form VentanaSalida
      */
-    public VentanaSalida() {
+    public VentanaSalida(Hotel hotel, int numero_habitacion) {
         initComponents();
+    }
+
+    private VentanaSalida() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     /**
@@ -28,7 +32,7 @@ public class VentanaSalida extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);

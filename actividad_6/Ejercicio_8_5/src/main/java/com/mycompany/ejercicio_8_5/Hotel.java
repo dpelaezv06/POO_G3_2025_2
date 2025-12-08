@@ -56,7 +56,7 @@ public class Hotel {
     }
 
     public boolean buscarHabitacionOcupada(int numero_habitacion){
-        for (int counter = 0; counter <= lista_habitaciones.size(); counter++){
+        for (int counter = 0; counter < lista_habitaciones.size(); counter++){
             Habitacion habitacion_actual = lista_habitaciones.elementAt(counter);
 
             if (habitacion_actual.getNumeroHabitacion() == numero_habitacion && !habitacion_actual.getDisponible()){

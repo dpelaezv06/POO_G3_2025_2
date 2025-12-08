@@ -4,6 +4,8 @@
  */
 package com.mycompany.ejercicio_8_5;
 
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author daniel
@@ -17,9 +19,17 @@ public class VentanaPrincipal extends javax.swing.JFrame {
     /**
      * Creates new form VentanaPrincipal
      */
-    public VentanaPrincipal() {
+    private Hotel hotel;
+    
+    public VentanaPrincipal(Hotel hotel) {
+        this.hotel = hotel;
         initComponents();
+        
 
+    }
+
+    private VentanaPrincipal() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 
     /**
@@ -37,13 +47,25 @@ public class VentanaPrincipal extends javax.swing.JFrame {
         jMenuItem2 = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Hotel");
+        setResizable(false);
 
         jMenu1.setText("Menú");
 
         jMenuItem1.setText("Consultar habitaciones");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem1);
 
         jMenuItem2.setText("Salida de huéspedes");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jMenu1.add(jMenuItem2);
 
         jMenuBar1.add(jMenu1);
@@ -63,6 +85,35 @@ public class VentanaPrincipal extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        VentanaHabitaciones ventanaHabitaciones = new VentanaHabitaciones(hotel);
+        ventanaHabitaciones.setVisible(true);
+
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+        try{
+            String numero_habitacionString = JOptionPane.showInputDialog(null, "Ingrese el número de la habitación.", "Salida huéspedes", JOptionPane.QUESTION_MESSAGE);
+            int numero_habitacion = Integer.valueOf(numero_habitacionString);
+
+            if (numero_habitacion < 1 || numero_habitacion > 10){
+                JOptionPane.showMessageDialog(this,"El número de habitación debe estar entre 1 y 10", "Mensaje", JOptionPane.INFORMATION_MESSAGE, null);
+
+            }else if (hotel.buscarHabitacionOcupada(numero_habitacion)){
+                VentanaSalida ventanaSalida = new VentanaSalida(hotel, numero_habitacion);
+                ventanaSalida.setVisible(true);
+            }else{
+                JOptionPane.showMessageDialog(this,"La habitación no está ocupada", "Mensaje", JOptionPane.INFORMATION_MESSAGE, null);
+            }
+        }catch (Exception e){
+            JOptionPane.showMessageDialog(this,"Campo nulo o error en formato de número.", "Error", JOptionPane.ERROR_MESSAGE, null);
+
+        }
+        
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     /**
      * @param args the command line arguments
