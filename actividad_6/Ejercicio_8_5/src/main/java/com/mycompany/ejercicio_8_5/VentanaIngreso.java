@@ -77,11 +77,9 @@ public class VentanaIngreso extends javax.swing.JFrame {
         constraints.gridx = 0;
         constraints.gridy = 6;
         contenedor.add(boton_aceptar, constraints);
-        boton_aceptar.addActionListener((ActionListener) this);
         constraints.gridx = 1;
         constraints.gridy = 6;
         contenedor.add(boton_cancelar, constraints);
-        boton_cancelar.addActionListener((ActionListener) this);
         
 
     }

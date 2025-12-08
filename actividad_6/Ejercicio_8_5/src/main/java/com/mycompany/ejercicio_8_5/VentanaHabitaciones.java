@@ -11,6 +11,8 @@ package com.mycompany.ejercicio_8_5;
 
 import java.awt.*;
 
+import javax.swing.JOptionPane;
+
 public class VentanaHabitaciones extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VentanaHabitaciones.class.getName());
@@ -162,6 +164,11 @@ public class VentanaHabitaciones extends javax.swing.JFrame {
         spinner_habitacionRequerida.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
 
         boton_aceptar.setText("Aceptar");
+        boton_aceptar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_aceptarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -276,6 +283,20 @@ public class VentanaHabitaciones extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void boton_aceptarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_aceptarActionPerformed
+        // TODO add your handling code here:
+        int habitacion_requerida = (int) spinner_habitacionRequerida.getValue();
+
+        if (!hotel.buscarHabitacionOcupada(habitacion_requerida)){
+            VentanaIngreso ventanaIngreso = new VentanaIngreso(hotel, habitacion_requerida);
+            setVisible(false);
+            ventanaIngreso.setVisible(true);
+        }else{
+            JOptionPane.showMessageDialog(this, "La habitación " + habitacion_requerida + " no está disponible.", "Mensaje", JOptionPane.INFORMATION_MESSAGE, null);
+        }
+        
+    }//GEN-LAST:event_boton_aceptarActionPerformed
 
     /**
      * @param args the command line arguments
