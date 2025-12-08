@@ -4,10 +4,18 @@
  */
 package com.mycompany.ejercicio_8_5;
 
+import java.awt.*;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+
 /**
  *
  * @author daniel
  */
+import java.util.*;
+
+import javax.swing.JOptionPane;
+
 public class VentanaSalida extends javax.swing.JFrame {
     
     private static final java.util.logging.Logger logger = java.util.logging.Logger.getLogger(VentanaSalida.class.getName());
@@ -15,8 +23,51 @@ public class VentanaSalida extends javax.swing.JFrame {
     /**
      * Creates new form VentanaSalida
      */
+
+    private Container contenedor;
+    private Hotel hotel;
+    private int numero_habitacion;
+    private int posicion_habitacion;
+    private Habitacion habitacion_ocupada;
+
     public VentanaSalida(Hotel hotel, int numero_habitacion) {
+        this.hotel = hotel;
+        this.numero_habitacion = numero_habitacion;
         initComponents();
+        setLocationRelativeTo(null);
+        contenedor = getContentPane();
+        contenedor.setLayout(new GridBagLayout());
+        GridBagConstraints constraints = new GridBagConstraints();
+        constraints.fill = GridBagConstraints.HORIZONTAL;
+        constraints.insets = new Insets(3, 3, 3, 3);
+        label_numeroHabitacion.setText("Habitación: " + numero_habitacion);
+        constraints.gridx = 0;
+        constraints.gridy = 0;
+        contenedor.add(label_numeroHabitacion, constraints);
+        String fecha_ingreso = hotel.buscarFechaIngresoHabitacion(numero_habitacion);
+        label_fechaIngreso.setText("Fecha de ingreso: " + fecha_ingreso);
+        constraints.gridx = 0;
+        constraints.gridy = 1;
+        contenedor.add(label_fechaIngreso, constraints);
+        constraints.gridx = 0;
+        constraints.gridy = 2;
+        contenedor.add(label_fechaSalida, constraints);
+        constraints.gridx = 0;
+        constraints.gridy = 3;
+        contenedor.add(campo_fechaSalida, constraints);
+        constraints.gridx = 0;
+        constraints.gridy = 4;
+        contenedor.add(boton_calcular, constraints);
+        constraints.gridx = 0;
+        constraints.gridy = 5;
+        contenedor.add(label_cantidadDias, constraints);
+        constraints.gridx = 0;
+        constraints.gridy = 6;
+        contenedor.add(label_valorTotal, constraints);
+        constraints.gridx = 0;
+        constraints.gridy = 7;
+        contenedor.add(boton_registrarSalida, constraints);
+        boton_registrarSalida.setEnabled(false);
     }
 
     private VentanaSalida() {
@@ -49,13 +100,18 @@ public class VentanaSalida extends javax.swing.JFrame {
 
         label_fechaIngreso.setText("Fecha de ingreso: ");
 
-        label_fechaSalida.setText("Fecha de salida:");
+        label_fechaSalida.setText("Fecha de salida (aaaa-mm-dd):");
 
         label_cantidadDias.setText("Días de hospedaje: ");
 
         label_valorTotal.setText("Total: $");
 
         boton_calcular.setText("Calcular");
+        boton_calcular.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_calcularActionPerformed(evt);
+            }
+        });
 
         boton_registrarSalida.setText("Registrar salida");
 
@@ -76,11 +132,7 @@ public class VentanaSalida extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGap(72, 72, 72)
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(label_fechaIngreso)
-                                .addComponent(label_fechaSalida, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(campo_fechaSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(campo_fechaSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(84, 84, 84)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -90,6 +142,12 @@ public class VentanaSalida extends javax.swing.JFrame {
                         .addGap(115, 115, 115)
                         .addComponent(boton_registrarSalida)))
                 .addContainerGap(63, Short.MAX_VALUE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(0, 0, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(label_fechaIngreso)
+                    .addComponent(label_fechaSalida))
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -115,6 +173,36 @@ public class VentanaSalida extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void boton_calcularActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_calcularActionPerformed
+        // TODO add your handling code here:
+        String fecha_salida = campo_fechaSalida.getText();
+        String fecha_ingreso = hotel.buscarFechaIngresoHabitacion(numero_habitacion);
+        for (int counter = 0; counter < hotel.lista_habitaciones.size(); counter++) {
+            habitacion_ocupada = (Habitacion) hotel.lista_habitaciones.elementAt(counter);
+            if (habitacion_ocupada.getNumeroHabitacion() == this.numero_habitacion) {
+                try{
+                    posicion_habitacion = counter;
+                    SimpleDateFormat formato_fecha = new SimpleDateFormat("yyyy-MM-dd");
+                    Date fecha_salidaDate = formato_fecha.parse(fecha_salida);
+                    habitacion_ocupada.getHuesped().setFecha_salida(fecha_salidaDate);
+                    Date fecha_ingresoDate = habitacion_ocupada.getHuesped().getFecha_ingreso();
+                    if (fecha_ingresoDate.compareTo(fecha_salidaDate) < 0){
+                        int dias_hospedaje = habitacion_ocupada.getHuesped().diasAlojamiento();
+                        label_cantidadDias.setText("Días de hospedaje: " + dias_hospedaje);
+                        double valor_total = dias_hospedaje * habitacion_ocupada.getPrecioNoche();
+                        label_valorTotal.setText("Total: $" + valor_total);
+                        boton_registrarSalida.setEnabled(true);
+                    }else{
+                        JOptionPane.showMessageDialog(this, "La fecha de salida es anterior a la de ingreso.", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                }catch (ParseException parseException){
+                    JOptionPane.showMessageDialog(this, "Formato de fecha incorrecto. Use aaaa-mm-dd.", "Error", JOptionPane.ERROR_MESSAGE);
+                }
+            }
+
+        }
+    }//GEN-LAST:event_boton_calcularActionPerformed
 
     /**
      * @param args the command line arguments
