@@ -216,6 +216,7 @@ public class VentanaIngreso extends javax.swing.JFrame {
                     Date fecha = formato.parse(fechaIngresada);
 
                     Huesped huesped = new Huesped(campo_nombre.getText(), campo_apellidos.getText(), Integer.parseInt(campo_identificacion.getText()));
+                    huesped.setFecha_ingreso(fecha);
                     habitacion_actual.setHuesped(huesped);
                     habitacion_actual.setDisponible(false);
                     habitacion_reservada = habitacion_actual;
