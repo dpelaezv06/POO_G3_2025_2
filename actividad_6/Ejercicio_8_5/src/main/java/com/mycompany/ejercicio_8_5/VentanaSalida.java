@@ -32,17 +32,85 @@ public class VentanaSalida extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        label_numeroHabitacion = new javax.swing.JLabel();
+        label_fechaIngreso = new javax.swing.JLabel();
+        label_fechaSalida = new javax.swing.JLabel();
+        label_cantidadDias = new javax.swing.JLabel();
+        label_valorTotal = new javax.swing.JLabel();
+        campo_fechaSalida = new javax.swing.JTextField();
+        boton_calcular = new javax.swing.JButton();
+        boton_registrarSalida = new javax.swing.JButton();
+
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Salida de huésped");
+        setResizable(false);
+
+        label_numeroHabitacion.setText("Habitación:");
+
+        label_fechaIngreso.setText("Fecha de ingreso: ");
+
+        label_fechaSalida.setText("Fecha de salida:");
+
+        label_cantidadDias.setText("Días de hospedaje: ");
+
+        label_valorTotal.setText("Total: $");
+
+        boton_calcular.setText("Calcular");
+
+        boton_registrarSalida.setText("Registrar salida");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(label_numeroHabitacion)
+                        .addGap(145, 145, 145))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(boton_calcular)
+                        .addGap(139, 139, 139))))
+            .addGroup(layout.createSequentialGroup()
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(72, 72, 72)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(label_fechaIngreso)
+                                .addComponent(label_fechaSalida, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(campo_fechaSalida, javax.swing.GroupLayout.PREFERRED_SIZE, 224, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(84, 84, 84)
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(label_valorTotal)
+                            .addComponent(label_cantidadDias)))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGap(115, 115, 115)
+                        .addComponent(boton_registrarSalida)))
+                .addContainerGap(63, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(20, 20, 20)
+                .addComponent(label_numeroHabitacion)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(label_fechaIngreso)
+                .addGap(12, 12, 12)
+                .addComponent(label_fechaSalida)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 17, Short.MAX_VALUE)
+                .addComponent(campo_fechaSalida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(boton_calcular)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(label_cantidadDias)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(label_valorTotal)
+                .addGap(34, 34, 34)
+                .addComponent(boton_registrarSalida)
+                .addGap(35, 35, 35))
         );
 
         pack();
@@ -74,5 +142,13 @@ public class VentanaSalida extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton boton_calcular;
+    private javax.swing.JButton boton_registrarSalida;
+    private javax.swing.JTextField campo_fechaSalida;
+    private javax.swing.JLabel label_cantidadDias;
+    private javax.swing.JLabel label_fechaIngreso;
+    private javax.swing.JLabel label_fechaSalida;
+    private javax.swing.JLabel label_numeroHabitacion;
+    private javax.swing.JLabel label_valorTotal;
     // End of variables declaration//GEN-END:variables
 }
