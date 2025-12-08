@@ -134,6 +134,11 @@ public class VentanaIngreso extends javax.swing.JFrame {
         });
 
         boton_cancelar.setText("Cancelar");
+        boton_cancelar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_cancelarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -226,6 +231,11 @@ public class VentanaIngreso extends javax.swing.JFrame {
             }
         }        
     }//GEN-LAST:event_boton_aceptarActionPerformed
+
+    private void boton_cancelarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_cancelarActionPerformed
+        // TODO add your handling code here:
+        setVisible(false);
+    }//GEN-LAST:event_boton_cancelarActionPerformed
 
     /**
      * @param args the command line arguments
