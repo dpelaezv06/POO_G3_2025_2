@@ -114,6 +114,11 @@ public class VentanaSalida extends javax.swing.JFrame {
         });
 
         boton_registrarSalida.setText("Registrar salida");
+        boton_registrarSalida.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                boton_registrarSalidaActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -203,6 +208,16 @@ public class VentanaSalida extends javax.swing.JFrame {
 
         }
     }//GEN-LAST:event_boton_calcularActionPerformed
+
+    private void boton_registrarSalidaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_boton_registrarSalidaActionPerformed
+        // TODO add your handling code here:
+        habitacion_ocupada.setHuesped(null);
+        habitacion_ocupada.setDisponible(true);
+        hotel.lista_habitaciones.set(posicion_habitacion, habitacion_ocupada);
+        JOptionPane.showMessageDialog(this, "Salida registrada con éxito.", "Mensaje", JOptionPane.INFORMATION_MESSAGE, null);
+        setVisible(false);
+        
+    }//GEN-LAST:event_boton_registrarSalidaActionPerformed
 
     /**
      * @param args the command line arguments
