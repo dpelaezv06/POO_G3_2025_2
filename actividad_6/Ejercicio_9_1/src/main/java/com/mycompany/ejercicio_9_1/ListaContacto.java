@@ -8,6 +8,16 @@ package com.mycompany.ejercicio_9_1;
  *
  * @author daniel
  */
+import java.util.Vector;
 public class ListaContacto {
-    
+
+    Vector lista;
+
+    ListaContacto(){
+        lista = new Vector();
+    }
+
+    void agregarContacto(Contacto contacto){
+        lista.add(contacto);
+    }
 }
