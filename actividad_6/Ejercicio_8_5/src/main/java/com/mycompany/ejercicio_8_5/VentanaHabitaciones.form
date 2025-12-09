@@ -26,57 +26,58 @@
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
           <Group type="102" alignment="0" attributes="0">
-              <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
+                  <Group type="102" attributes="0">
+                      <EmptySpace min="-2" pref="27" max="-2" attributes="0"/>
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="label_habitacion6" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="label_habitacion1" alignment="1" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <Component id="label_disponibilidad6" min="-2" pref="130" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace min="-2" pref="44" max="-2" attributes="0"/>
+                  </Group>
                   <Group type="102" alignment="1" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" alignment="0" attributes="0">
-                              <Component id="label_habitacion1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="90" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" alignment="1" attributes="0">
-                              <Component id="label_disponibilidad1" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
-                          </Group>
-                      </Group>
-                      <EmptySpace min="-2" pref="12" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="label_habitacion6" alignment="0" min="-2" max="-2" attributes="0"/>
-                          <Component id="label_disponibilidad6" alignment="0" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <EmptySpace min="-2" pref="102" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="label_disponibilidad1" min="-2" pref="112" max="-2" attributes="0"/>
+                      <EmptySpace min="-2" pref="62" max="-2" attributes="0"/>
                   </Group>
               </Group>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="label_habitacion7" min="-2" max="-2" attributes="0"/>
-                  <Component id="label_habitacion2" min="-2" max="-2" attributes="0"/>
-                  <Component id="label_disponibilidad2" min="-2" max="-2" attributes="0"/>
-                  <Component id="label_disponibilidad7" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="label_habitacion7" max="32767" attributes="0"/>
+                      <Component id="label_habitacion2" max="32767" attributes="0"/>
+                  </Group>
+                  <Component id="label_disponibilidad2" min="-2" pref="111" max="-2" attributes="0"/>
+                  <Component id="label_disponibilidad7" min="-2" pref="125" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace pref="89" max="32767" attributes="0"/>
+              <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="label_disponibilidad3" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="label_habitacion3" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="label_habitacion8" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="label_disponibilidad8" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="label_habitacion3" alignment="0" max="32767" attributes="0"/>
+                      <Component id="label_habitacion8" alignment="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Component id="label_disponibilidad3" min="-2" pref="109" max="-2" attributes="0"/>
+                  <Component id="label_disponibilidad8" alignment="0" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="103" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="66" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="label_disponibilidad4" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="label_habitacion4" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="label_habitacion9" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="label_disponibilidad9" alignment="0" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Component id="label_habitacion4" alignment="0" max="32767" attributes="0"/>
+                      <Component id="label_habitacion9" alignment="0" max="32767" attributes="0"/>
+                  </Group>
+                  <Component id="label_disponibilidad4" min="-2" pref="113" max="-2" attributes="0"/>
+                  <Component id="label_disponibilidad9" alignment="0" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="91" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="0" attributes="0">
+              <EmptySpace min="-2" pref="50" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="0" max="-2" attributes="0">
                   <Component id="label_habitacion5" alignment="0" min="-2" max="-2" attributes="0"/>
-                  <Component id="label_disponibilidad5" min="-2" max="-2" attributes="0"/>
                   <Component id="label_habitacion10" min="-2" max="-2" attributes="0"/>
-                  <Component id="label_disponibilidad10" min="-2" max="-2" attributes="0"/>
+                  <Component id="label_disponibilidad5" pref="101" max="32767" attributes="0"/>
+                  <Component id="label_disponibilidad10" alignment="0" max="32767" attributes="0"/>
               </Group>
-              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="-2" pref="217" max="-2" attributes="0"/>

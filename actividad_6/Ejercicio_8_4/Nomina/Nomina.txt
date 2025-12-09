@@ -1,21 +1,21 @@
-Nombre: Juan
-Apellidos: Juan
-Cargo: ESTRATEGICO
+Nombre: Daniel
+Apellidos: Pelaez
+Cargo: OPERATIVO
 Genero: MASCULINO
 Salario: 3.0
 Días Trabajados: 31
-Otros Ingresos: 2.0
+Otros Ingresos: 0.0
 Pagos Salud: 1.0
 Aporte Pensiones: 1.0
 ----------
 Nombre: Marta
-Apellidos: Sanchez
-Cargo: DIRECTIVO
+Apellidos: Diaz
+Cargo: ESTRATEGICO
 Genero: FEMENINO
-Salario: 8.0
-Días Trabajados: 15
-Otros Ingresos: 5.0
-Pagos Salud: 3.0
-Aporte Pensiones: 1.0
+Salario: 45.0
+Días Trabajados: 1
+Otros Ingresos: 7.0
+Pagos Salud: 10.0
+Aporte Pensiones: 54.0
 ----------
-Total de nómina: 214.00
+Total de nómina: 79.00
